@@ -1,0 +1,83 @@
+@import url("https://fonts.cdnfonts.com/css/sofia-pro");
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: "Sofia Pro", sans-serif;
+    background-color: #44332d;
+}
+
+.padding{
+    padding: 0px 7.5%;
+}
+
+header{
+    background-color: #44332d;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+#nav-small{
+    display: flex;
+    justify-content: space-between;
+}
+
+#nav-socials{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.nav-socials-links{
+    background-color: #fcf7f2;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border-radius: 100%;
+    margin: 16px;
+    transition: ease 0.2s;
+    position: relative;
+}
+
+.nav-socials-links:hover{
+    background-color: #bdbab8;
+}
+
+.icon-img{
+    position: absolute;
+    width: 18px;
+}
+
+#nav-links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#nav-links-list{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    gap: 2rem;
+}
+
+.nav-links-list-items{
+    all: unset; 
+    color: #fcf7f2;
+    transition: ease 0.2s;
+    cursor: pointer;
+}
+
+.nav-links-list-items:hover{
+    color: #bdbab8;
+}
+
+#nav-big{
+    height: 8rem;
+    background-color: #fcf7f2;
+}
