@@ -1,35 +1,36 @@
 @import url("https://fonts.cdnfonts.com/css/sofia-pro");
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     padding: 0;
     margin: 0;
     font-family: "Sofia Pro", sans-serif;
     background-color: #44332d;
-}
-
-.padding{
-    padding: 0px 7.5%;
+    user-select: none;
+    height: 200rem;
 }
 
 header{
-    background-color: #44332d;
     display: flex;
     flex-direction: column;
-    margin: 0;
 }
 
-#nav-small{
+#header--small{
     display: flex;
     justify-content: space-between;
+    padding: 0 7.5%;
 }
 
-#nav-socials{
+#header--socials{
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.nav-socials-links{
+.header--socials_links{
     background-color: #fcf7f2;
     aspect-ratio: 1;
     display: flex;
@@ -38,26 +39,31 @@ header{
     padding: 1rem;
     border-radius: 100%;
     margin: 16px;
-    transition: ease 0.2s;
     position: relative;
+    transition: all 0.2s ease-in-out;
 }
 
-.nav-socials-links:hover{
-    background-color: #bdbab8;
+.header--socials_links:hover{
+    opacity: 80%;
 }
 
-.icon-img{
+.header--socials_links:active{
+    opacity: 100%;
+}
+
+.socials--img{
     position: absolute;
     width: 18px;
 }
 
-#nav-links{
+#header--small_links{
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #fcf7f2;
 }
 
-#nav-links-list{
+.header--link_list{
     list-style-type: none;
     display: flex;
     justify-content: space-between;
@@ -66,18 +72,151 @@ header{
     gap: 2rem;
 }
 
-.nav-links-list-items{
+.header--link{
     all: unset; 
-    color: #fcf7f2;
-    transition: ease 0.2s;
+    transition: opacity 0.2s ease-in-out;
     cursor: pointer;
 }
 
-.nav-links-list-items:hover{
-    color: #bdbab8;
+.header--link:hover{
+    opacity: 80%;
 }
 
-#nav-big{
-    height: 8rem;
-    background-color: #fcf7f2;
+.hover_color:active{
+    opacity: 100%;
 }
+
+#header--big{
+   padding: 1rem 7.5%;
+   background-color: #fcf7f2;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+}
+
+#logo--img{
+    height: 100px;
+}
+
+#header--big_links{
+    color: #44332d;
+    display: flex;
+    letter-spacing: 3px;
+    transition: color 0.2s ease-in-out;
+}
+
+.hover_ul:after{
+    content: '';
+    display: block;
+    width: 0%;
+    background-color: #44332d;
+    height: 2px;
+    border-radius: 20px;
+    margin-inline: auto;
+    transition: all 0.2s ease-in-out;
+}
+
+.hover_ul:hover:after{
+    opacity: 80%;
+    width: 100%;
+}
+
+.hover_ul:active:after{
+    animation: ul-active__anim 0.3s infinite;
+    transition: all 0.2s ease-in-out;
+}
+
+@keyframes ul-active__anim{
+    0%{width: 0%;}
+    100%{width: 100%;}
+}
+
+
+#search--button{
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    padding: 0.5rem;
+    height: 21px;
+    margin: 16px;
+    transition: all 0.2s ease-in-out;
+}
+
+#search--button:hover{
+    background-color: #44332d20;
+    cursor: pointer;
+}
+
+#search--button_img{
+    height: inherit;
+}
+
+#main--bg_wrapper{
+    position: relative;
+    background-color: #fcf7f2;
+    height: 35rem;
+    overflow: hidden;
+}
+
+#main--bg_wrapper::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #44332d50;
+    z-index: 1;
+}
+
+.bg_img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    z-index: 0;
+    background-attachment: fixed;
+    background-size: cover;
+    opacity: 0;
+    animation: image_opacity 12s infinite;
+}
+
+.bg_img:nth-of-type(1){
+    background-image: url(./assets/1.jpg);
+    animation-delay: 0s;
+}
+
+.bg_img:nth-of-type(2){
+    background-image: url(./assets/2.jpg);
+    animation-delay: 4s;
+}
+
+.bg_img:nth-of-type(3){
+    background-image: url(./assets/3.jpg);
+    animation-delay: 8s;
+}
+
+@keyframes image_opacity{
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    40% { opacity: 1; } 
+    50% { opacity: 0; }
+    90% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
