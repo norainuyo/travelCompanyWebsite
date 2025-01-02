@@ -1,4 +1,5 @@
 @import url("https://fonts.cdnfonts.com/css/sofia-pro");
+@import url('https://fonts.cdnfonts.com/css/goudy-old-style');
 
 html{
     scroll-behavior: smooth;
@@ -13,15 +14,90 @@ body{
     height: 200rem;
 }
 
-header{
-    display: flex;
-    flex-direction: column;
+#header__mobile{
+    display: none;
+}
+@media only screen and (max-width: 1100px){
+    #header__desktop{
+        display: none;
+    }
+    #header--big{
+        display: none;
+    }
+    #header__mobile{
+        display: block;
+        background-color: #fcf7f2;
+        height: 2%;
+        padding: 0 7.5%;
+        display: flex;
+        align-items: center;
+        /* position: sticky;
+        top: 0;
+        z-index: 3; */
+    }
+    #logo--container{
+        height: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        flex: 1;
+    }
+    #link--wrapper{
+        all: unset;
+        margin: 0;
+        width: 100%;
+        height: 65%;
+        display: flex;
+        align-items: center;
+        gap: clamp(2%,2%,4%);
+    }
+    #link--wrapper figure{
+        height: 100%;
+        margin: 0;
+    }
+    #splitline{
+        height: 30px;
+        width: 1px;
+        border-radius: 2rem;
+        background-color: #44332d;
+    }
+    #link--wrapper span{
+        font-family: 'Goudy Old Style', sans-serif;
+        filter: drop-shadow(0.5px 0.5px 0.5px #44332d);
+        font-size: 95%;
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+    #logo--img{
+        height: 100%;
+        object-fit: contain;
+    }
+    #menu--button_wrapper{
+        margin: 0;
+        padding: 2%;
+        height: 35%;
+        display: flex;
+        align-items: center;
+        justify-content: right;
+    }
+    #menu--button{
+        max-height: 100%;
+        object-fit: contain;
+    }
+}
+
+@media only screen and (max-width:600px){
+    #link--wrapper{
+        height: 50%;
+    }
 }
 
 #header--small{
     display: flex;
     justify-content: space-between;
     padding: 0 7.5%;
+    background-color: #44332d;
 }
 
 #header--socials{
@@ -93,9 +169,18 @@ header{
    flex-direction: row;
    justify-content: space-between;
    align-items: center;
+   /* position: sticky;
+   top: 0;
+   z-index: 3; */
 }
 
-#logo--img{
+/* @media only screen and (max-width: 1100px){
+    #header--big{
+        display: none;
+    }
+} */
+
+#header--logo{  
     height: 100px;
 }
 
@@ -157,8 +242,14 @@ header{
 #main--bg_wrapper{
     position: relative;
     background-color: #fcf7f2;
-    height: 35rem;
+    height: 30rem;
     overflow: hidden;
+}
+
+@media only screen and (max-width:600px){
+    #main--bg_wrapper{
+        height:38rem;
+    }
 }
 
 #main--bg_wrapper::before{
@@ -178,9 +269,9 @@ header{
     height: 100%;
     margin: 0;
     z-index: 0;
-    background-attachment: fixed;
+    background-attachment:fixed;
     background-size: cover;
-    opacity: 0;
+    opacity: 0; 
     animation: image_opacity 12s infinite;
 }
 
@@ -207,7 +298,6 @@ header{
     90% { opacity: 0; }
     100% { opacity: 0; }
 }
-
 
 
 

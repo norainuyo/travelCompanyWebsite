@@ -12,9 +12,9 @@
     <link rel="stylesheet" href="./styles.css" />
     <title>Active Eye Tours</title>
   </head>
-  <body>
-    <header>
-      <div id="header--small" class="padding">
+  <body id="body">
+    <header id="header__desktop">
+      <div id="header--small">
         <nav id="header--socials">
           <a href="#facebook" class="header--socials_links">
             <img
@@ -52,13 +52,13 @@
           </ul>
         </nav>
       </div>
-      <div id="header--big" class="padding">
-        <figure id="header--logo">
+      <div id="header--big">
+        <figure>
           <a href="#homepage">
             <img
               src="./assets/company-logo.png"
               alt="Company logo"
-              id="logo--img"
+              id="header--logo"
             />
           </a>
         </figure>
@@ -91,6 +91,28 @@
         </nav>
       </div>
     </header>
+    <header id="header__mobile">
+      <section id="logo--container">
+        <a href="#homepage" id="link--wrapper">
+          <figure>
+            <img
+              src="./assets/company-logo.png"
+              alt="Company logo"
+              id="logo--img"
+            />
+          </figure>
+          <div id="splitline"></div>
+          <span>ACTIVE NEPAL TOURS</span>
+        </a>
+      </section>
+      <figure id="menu--button_wrapper">
+        <img
+          src="./assets/header--menu.png"
+          alt="menu button"
+          id="menu--button"
+        />
+      </figure>
+    </header>
     <main>
       <section id="main--bg_wrapper">
         <figure class="bg_img"></figure>
@@ -98,6 +120,20 @@
         <figure class="bg_img"></figure>
       </section>
     </main>
-    <script></script>
+    <script>
+      document.getElementById("body").onscroll = function myFunction() {
+        var scrolltotop = document.scrollingElement.scrollTop;
+        var target = document.querySelectorAll(".bg_img");
+        var xvalue = "center";
+        var factor = 0.2;
+        var yvalue = scrolltotop * factor;
+        target.forEach(scrollParallax);
+
+        function scrollParallax(item) {
+          return (item.style.backgroundPosition =
+            xvalue + " -" + yvalue + "px");
+        }
+      };
+    </script>
   </body>
 </html>
